@@ -57,7 +57,7 @@ export function deployContract(
               contractSpecs.oracleQuery,
               contractSpecs.oracleQueryRepeatSeconds,
               {
-                gas: 6500000, // TODO : Remove hard-coded gas
+                gas: 6100000, // TODO : Remove hard-coded gas
                 value: web3.toWei('.2', 'ether'),
                 gasPrice: web3.toWei(1, 'gwei'),
                 from: coinbase
