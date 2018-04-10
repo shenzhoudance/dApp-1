@@ -1,0 +1,302 @@
+{
+  "contractName": "IQueryCallback",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "queryID",
+          "type": "bytes32"
+        },
+        {
+          "name": "result",
+          "type": "string"
+        }
+      ],
+      "name": "queryCallBack",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "/*\n    Copyright 2017 Phillip A. Elsasser\n\n    Licensed under the Apache License, Version 2.0 (the \"License\");\n    you may not use this file except in compliance with the License.\n    You may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\n    Unless required by applicable law or agreed to in writing, software\n    distributed under the License is distributed on an \"AS IS\" BASIS,\n    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n    See the License for the specific language governing permissions and\n    limitations under the License.\n*/\n\npragma solidity ^0.4.18;\n\nimport \"./oraclizeAPI.sol\";\n\n\n/// @title\n/// @author Phil Elsasser <phil@marketprotocol.io>\ncontract IQueryCallback {\n    function queryCallBack(bytes32 queryID, string result) public;\n}\n",
+  "sourcePath": "/home/parallels/MARKETProtocol/contracts/oraclize/IQueryCallBack.sol",
+  "ast": {
+    "absolutePath": "/home/parallels/MARKETProtocol/contracts/oraclize/IQueryCallBack.sol",
+    "exportedSymbols": {
+      "IQueryCallback": [
+        2322
+      ]
+    },
+    "id": 2323,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2313,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "603:24:7"
+      },
+      {
+        "absolutePath": "/home/parallels/MARKETProtocol/contracts/oraclize/oraclizeAPI.sol",
+        "file": "./oraclizeAPI.sol",
+        "id": 2314,
+        "nodeType": "ImportDirective",
+        "scope": 2323,
+        "sourceUnit": 3434,
+        "src": "629:27:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title\n @author Phil Elsasser <phil@marketprotocol.io>",
+        "fullyImplemented": false,
+        "id": 2322,
+        "linearizedBaseContracts": [
+          2322
+        ],
+        "name": "IQueryCallback",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "id": 2321,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "queryCallBack",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2319,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2316,
+                  "name": "queryID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2321,
+                  "src": "774:15:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2315,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "774:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2318,
+                  "name": "result",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2321,
+                  "src": "791:13:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 2317,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "791:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "773:32:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2320,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "812:0:7"
+            },
+            "scope": 2322,
+            "src": "751:62:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2323,
+        "src": "721:94:7"
+      }
+    ],
+    "src": "603:213:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/parallels/MARKETProtocol/contracts/oraclize/IQueryCallBack.sol",
+    "exportedSymbols": {
+      "IQueryCallback": [
+        2322
+      ]
+    },
+    "id": 2323,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2313,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "603:24:7"
+      },
+      {
+        "absolutePath": "/home/parallels/MARKETProtocol/contracts/oraclize/oraclizeAPI.sol",
+        "file": "./oraclizeAPI.sol",
+        "id": 2314,
+        "nodeType": "ImportDirective",
+        "scope": 2323,
+        "sourceUnit": 3434,
+        "src": "629:27:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title\n @author Phil Elsasser <phil@marketprotocol.io>",
+        "fullyImplemented": false,
+        "id": 2322,
+        "linearizedBaseContracts": [
+          2322
+        ],
+        "name": "IQueryCallback",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "id": 2321,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "queryCallBack",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2319,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2316,
+                  "name": "queryID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2321,
+                  "src": "774:15:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2315,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "774:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2318,
+                  "name": "result",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2321,
+                  "src": "791:13:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 2317,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "791:6:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "773:32:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2320,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "812:0:7"
+            },
+            "scope": 2322,
+            "src": "751:62:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2323,
+        "src": "721:94:7"
+      }
+    ],
+    "src": "603:213:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-03-27T09:54:58.740Z"
+}

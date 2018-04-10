@@ -1,8 +1,0 @@
-.env
-.idea/
-build/
-coverage.json
-coverage/
-dapp/
-node_modules/
-.DS_Store
