@@ -1,0 +1,76 @@
+service: address-service-dev
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+    PROVIDER_URL: ""
+    CONTRACT_ADDRESS: "0x0"
+    OWNER_ADDRESS: "0x0"
+    OWNER_PRIVKEY: "0x0"
+    GAS_PRICE: "20000000000"
+    GAS_LIMIT: "100000"
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+  stackPolicy: 
+    - Effect: Allow
+      Principal: "*"
+      Action: "Update:*"
+      Resource: "*"
+
+functions:
+  create:
+    handler: whitelist/create.create
+    events:
+      - http:
+          path: whitelist
+          method: post
+          cors: true
+
+  getdbentires:
+    handler: whitelist/list.getdbentries
+    events:
+      - http:
+          path: dbentries
+          method: get
+          cors: true
+
+  getwhitelist:
+    handler: whitelist/list.getwhitelist
+    events:
+      - http:
+          path: whitelist
+          method: get
+          cors: true
+
+
+resources:
+  Resources:
+    whitelistDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
