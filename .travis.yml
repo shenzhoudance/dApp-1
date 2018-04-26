@@ -4,6 +4,17 @@ node_js:
 cache:
   directories:
     - node_modules
+before_deploy:
+  - npm run build:rinkeby
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: "s3://dev.dapp.marketprotocol.io"
+  local_dir: dApp
+  acl: public_read
+  on:
+    branch: master
 script:
   - npm test -- --coverage
 after_script:

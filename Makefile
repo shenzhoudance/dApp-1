@@ -48,9 +48,7 @@ start_dapp:
 
 # start dApp with rinkeby abi's
 start_dapp_rinkeby:
-	rm -rf build/
-	cp -r rinkeby-build/ build/ # copy prebuilt abi's to build
-	npm start		  # run npm - should point metamask browser at rinkeby
+	npm start:rinkeby		  # run npm - should point metamask browser at rinkeby
 
 # run tests
 run_tests:
@@ -70,7 +68,5 @@ rm_dev:
 
 # DEV - deploy rinkeby site to s3 bucket
 deploy_dev:
-	rm -rf build/
-	cp -r rinkeby-build/ build/ # copy prebuilt abi's to build
-	npm run build
+	npm run build:rinkeby
 	aws s3 --profile $(DEV_PROFILE_NAME) cp dApp/ $(DEV_BUCKET) --recursive

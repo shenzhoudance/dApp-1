@@ -86,13 +86,17 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "start:rinkeby": "npm run copy:rinkeby && node scripts/start.js",
     "build": "node scripts/build.js",
+    "build:rinkeby": "CI=false npm run clean && npm run copy:rinkeby && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "lint": "eslint src/ --ext .js",
     "precommit": "npm run lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dApp"
+    "deploy": "gh-pages -d dApp",
+    "clean": "rm -rf ./dApp/",
+    "copy:rinkeby": "rm -rf ./build/ && cp -r rinkeby-build/ build/"
   },
   "jest": {
     "collectCoverageFrom": [
